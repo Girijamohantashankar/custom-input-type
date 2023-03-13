@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    text-align: center;
+    place-items: center;
+    background: #a39dc5;
+}
+
+
+/* ======================================================================>
+
+                                
+                          Input Range  Slide Bar
+ 
+
+===============================================================================*/
+.range {
+    height: 80px;
+    width: 380px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 65px 0 45px;
+
+}
+
+.range .sliderValue {
+    position: relative;
+    width: 100%;
+}
+
+.range .sliderValue span {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    top: -40px;
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease-in-out;
+    line-height: 55px;
+    z-index: 2;
+}
+
+.range .sliderValue span.show {
+    transform: translateX(-50%) scale(1);
+}
+
+.range .sliderValue span::after {
+    position: absolute;
+    content: "";
+    height: 45px;
+    width: 45px;
+    left: 50%;
+    background-color: #664Aff;
+    border: 3px solid #fff;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.range .field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.range .field .value {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    color: #664Aff;
+}
+
+.range .field .value.left {
+    left: -22px;
+}
+
+.range .field .value.right {
+    right: -43px;
+}
+
+.range .field input {
+    -webkit-appearance: none;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.range .field input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: #664Aff;
+    border-radius: 50%;
+    border: 1px solid #664Aff;
+    cursor: pointer;
+}
+
+.range .field input::-moz-range-progress {
+    background: #664Aff;
+}
+
+
+/* ===========================Date========================== */
+.data {
+    height: 80px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.data input {
+    height: 40px;
+    width: 200px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, red, yellow);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+}
+
+/* ==============================Input Color=========================================== */
+
+.color {
+    height: 80px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.color label,
+input {
+    margin-top: 20px;
+
+}
+
+.color-input {
+    border-radius: 50%;
+    width: 10%;
+    height: 50%;
+    margin-left: 20px;
+    background: yellow;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.color-input::-webkit-color-swatch {
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid red;
+}
+
+/* ====================Input Type File========================= */
+
+.file {
+    height: 80px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0 10px;
+}
+
+.input-file {
+    border: 5px double rgb(48, 11, 168);
+    border-radius: 50px;
+    padding: 2px;
+    font-size: 20px;
+    color: blue;
+}
+
+.input-file::-webkit-file-upload-button {
+    background-image: linear-gradient(45deg, rgb(225, 54, 94), #000);
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+
+/* ====================Input Type number======================= */
+.number {
+    display: flex;
+    height: 160px;
+    width: 100%;
+    background-color: #333131;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.custom-num {
+    margin: 1em;
+    color: #fff;
+    display: flex;
+    width: 3em;
+    height: 7em;
+    border: 1px solid #fff;
+    border-radius: 3em;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s;
+}
+.num-input::-webkit-outer-spin-button,
+.num-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.num-input{
+    font-size: 1.5em;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #21d99b;
+    font-weight: bold;
+    width: 100%;
+}
+.num-input:focus{
+    outline: none;
+}
+.custom-num i{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+/* ======================================scroll-bar=========================== */
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(transparent, #30ff00);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(transparent, #00c6ff);
+
+}
